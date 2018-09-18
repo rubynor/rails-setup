@@ -1,3 +1,8 @@
+## Checklist before you start
+
+ - Global gitignore in your home directory `~/.gitignore_global` .ie this:  
+
+
 ### Our prefered rails setup
 
 1. Generate the app with vue and webpacker
