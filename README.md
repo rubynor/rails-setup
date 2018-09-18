@@ -3,7 +3,7 @@
 1. Generate the app with vue and webpacker
 `rails new rubynor-app --webpack=vue --skip-test --database=postgresql`
 
-2. Add the gems in Gemfile
+2. Add the gems from Gemfile that you want to use
 `bundle install`
 
 3. Run the following commands
@@ -13,3 +13,7 @@
 
 `rails generate rspec:install`
 
+### Honeybadger
+Go to https://app.honeybadger.io/projects/new
+
+bundle exec honeybadger install [secret]
