@@ -1,6 +1,6 @@
 ## Checklist before you start
 
- - Global gitignore in your home directory `~/.gitignore_global` .ie this:  
+ - Global gitignore in your home directory `~/.gitignore_global` .ie this:  https://github.com/rubynor/rails-setup/blob/master/.gitignore_global
 
 
 ### Our prefered rails setup
