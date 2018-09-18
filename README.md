@@ -12,6 +12,7 @@
 `rails generate haml:application_layout convert`
 
 `rails generate rspec:install`
+`bundle exec guard init rspec`
 
 ### Honeybadger
 Go to https://app.honeybadger.io/projects/new
