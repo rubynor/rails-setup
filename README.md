@@ -67,3 +67,9 @@ Copy `Procfile` and `.foreman` to your repo and run:
 ```
 foreman start
 ```
+
+### Capybara
+In your test helper file you have to add the following
+```
+require 'capybara/rails'
+```
