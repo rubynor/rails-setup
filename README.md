@@ -26,8 +26,9 @@ git commit -am "ran rails new"
  https://github.com/rubynor/rails-setup/blob/master/Gemfile
 
 ``` 
-cp https://github.com/rubynor/rails-setup/blob/master/Gemfile .
-#check if this makes sense. Your ruby or rails versions might be different etc, that shouldn't be overridden
+#Append the recommend Gemfile gems to your gemfile
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/Gemfile >> Gemfile
+#check if this makes sense, you might want to move things around, especially to ensure only one group :development, :test 
 git diff 
 bundle install
 git commit -am "install recommended gems"
