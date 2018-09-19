@@ -24,3 +24,8 @@
 Go to https://app.honeybadger.io/projects/new
 
 bundle exec honeybadger install [secret]
+
+### Environment variables
+We use `dotenv-rails` to manage environment variables.
+
+Create a file named `.env` and put them there. Remember to add a .env.sample that is added to the repo
