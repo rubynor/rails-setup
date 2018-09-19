@@ -6,3 +6,4 @@ Thumbs.db
 logfile
 .bundle
 public/assets
+config/database.yml
