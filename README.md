@@ -8,8 +8,8 @@
 1. Generate the app with vue and webpacker
 `rails new rubynor-app --webpack=vue --skip-test --database=postgresql`
 
-2. Add the gems from Gemfile that you want to use
-`bundle install`
+2. Copy the gemfile and bundle install. Here is our recomendation: 
+ https://github.com/rubynor/rails-setup/blob/master/Gemfile
 
 3. Run the following commands
 
