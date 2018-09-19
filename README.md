@@ -41,6 +41,10 @@ rails generate haml:application_layout convert
 rm app/views/layouts/application.html.erb # as the above script instructs you to do manually
 rails generate rspec:install
 bundle exec guard init rspec
+git add.
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rspec > .rspec
+git diff
+git commit -am "install haml and rspec"
 ```
 
 ### Honeybadger
