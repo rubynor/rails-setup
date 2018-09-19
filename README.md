@@ -51,3 +51,18 @@ bundle exec honeybadger install [secret]
 We use `dotenv-rails` to manage environment variables.
 
 Create a file named `.env` and put them there. Remember to add a .env.sample that is added to the repo
+
+### Foreman
+Foreman will let you start both rails server and the webpack server in one command.
+
+Foreman should not be added to you Gemfile, it should be installed as a global gem on your pc.
+
+```
+gem install foreman
+```
+
+Copy `Procfile` and `.foreman` to your repo and run:
+
+```
+foreman start
+```
