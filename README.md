@@ -15,7 +15,9 @@ rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
 
 ```
 cd the-rubynor-app
+cp config/database.yml config/database.yml.sample
 git init .
+git diff # double check that database.yml is ignored. Did you put the .gitignore_global in your home dir?
 git commit -am "ran rails new"
 ```    
 
