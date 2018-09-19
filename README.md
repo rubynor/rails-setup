@@ -6,10 +6,25 @@
 ### Our prefered rails setup
 
 1. Generate the app with vue and webpacker
-`rails new rubynor-app --webpack=vue --skip-test --database=postgresql`
+`rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql`
+
+2. do some initial clean up
+
+    cd the-rubynor-app
+    git init .
+    git commit -am "ran rails new"
+    
+
 
 2. Copy the gemfile and bundle install. Here is our recomendation: 
  https://github.com/rubynor/rails-setup/blob/master/Gemfile
+ 
+    cp https://github.com/rubynor/rails-setup/blob/master/Gemfile .
+    #check if this makes sense. Your ruby or rails versions might be different etc, that shouldn't be overridden
+    git diff 
+    bundle install
+    git commit -am "install recommended gems"
+    
 
 3. Run the following commands
 
