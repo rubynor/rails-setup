@@ -11,7 +11,7 @@
 rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
 ```
 
-2. do some initial clean up
+2. Initial commit and prep work
 
 ```
 cd the-rubynor-app
