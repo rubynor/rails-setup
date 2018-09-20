@@ -71,6 +71,26 @@ curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.foreman >
 foreman start
 ```
 
+7. Devise for handling authentication
+
+```
+rails generate devise:install
+```
+
+At this point, a number of instructions will appear in the console. Among these instructions, you'll need to set up the default URL options for the Devise mailer in each environment. Here is a possible configuration for `config/environments/development.rb`:
+
+```
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+```
+
+Generate your user model or whatever you want to call it
+
+```
+rails generate devise User email:string name:string
+```
+
+You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
+
 ### Honeybadger
 Go to https://app.honeybadger.io/projects/new
 
