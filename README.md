@@ -55,6 +55,8 @@ We use `dotenv-rails` to manage environment variables.
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.env.sample > .env.sample
 # .env for the ENVs to be loaded locally
 cp .env.sample .env
+
+git add . && git commit -am "add dot-env"
 ```
 
 
