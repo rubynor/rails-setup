@@ -22,7 +22,7 @@ git commit -am "ran rails new"
 ```    
 
 
-2. Copy the gemfile and bundle install. Here is our recomendation: 
+3. Copy the gemfile and bundle install. Here is our recomendation: 
  https://github.com/rubynor/rails-setup/blob/master/Gemfile
 
 ``` 
@@ -34,7 +34,7 @@ bundle install
 git commit -am "install recommended gems"
 ```    
 
-3. Run the following commands
+4. Run the following commands
 
 ```
 rails generate haml:application_layout convert
