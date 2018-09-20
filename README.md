@@ -51,9 +51,10 @@ git commit -am "install haml and rspec"
 
 We use `dotenv-rails` to manage environment variables.
 ```
-curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.env > .env
 # The .env.sample will be in source control. Keep it up-to-date when adding new ENV vars to your .env, if you love your fellow developers
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.env.sample > .env.sample
+# .env for the ENVs to be loaded locally
+cp .env.sample .env
 ```
 
 
