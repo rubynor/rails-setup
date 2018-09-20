@@ -76,10 +76,13 @@ Go to https://app.honeybadger.io/projects/new
 
 bundle exec honeybadger install [secret]
 
-### Environment variables
-We use `dotenv-rails` to manage environment variables.
+## TESTING
 
-Create a file named `.env` and put them there. Remember to add a .env.sample that is added to the repo
+We like RSpec with Fabricator, and RSpec with Capybara for browser integration specs (aka feature specs). Don't make too many and don't make too few, but most importantly, don't make to many feature specs, they come at a high cost (maintanence, feedback delays because of slow tests (MUDA))
+
+
+
+
 
 ### Capybara
 In your test helper file you have to add the following
