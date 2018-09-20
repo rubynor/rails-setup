@@ -97,11 +97,42 @@ rails generate devise:views
 
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
+8. Background jobs. Sidekiq
 
-### Honeybadger
+
+## BEST PRACTICES Config
+
+application.rb :
+
+```
+    # Raise on unpermitted parameters. Silent failures are bad
+    config.action_controller.action_on_unpermitted_parameters = :raise
+```
+
+## PRODUCTION TOOLS
+
+ -1 Error catching tool. Honeybadger is suggested, see below
+ -1 Logs. Papertrail, see below
+ -1 Performance monitoring. Ie. New Relic. See below
+
+
+### Error Catcher. Honeybadger
 Go to https://app.honeybadger.io/projects/new
 
 bundle exec honeybadger install [secret]
+
+### Logging. Papertrail
+
+Papertrail is not a server log, but a logger to data changes.
+
+```
+class MyModel < ApplicationRecord
+  has_paper_trail
+  ...
+end
+ 
+```
+You can and should exclude unimportant fields. Read more 
 
 ## TESTING
 
