@@ -89,7 +89,14 @@ Generate your user model or whatever you want to call it
 rails generate devise User email:string name:string
 ```
 
+Override devise views, so they can be customized
+
+```
+rails generate devise:views
+```
+
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
+
 
 ### Honeybadger
 Go to https://app.honeybadger.io/projects/new
