@@ -8,7 +8,7 @@
 1. Generate the app with vue and webpacker
 
 ```
-rvm use 2.5.2 # or whatever the latest is
+rvm use your-version # 2.5.2 or whatever version the latest is. RVM not required ofc, use rbenv or anything of your choice. It will put this ruby version on top of your Gemfile. 
 rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
 ```
 
