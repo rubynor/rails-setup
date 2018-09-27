@@ -5,7 +5,7 @@
 
 ### Our prefered rails setup
 
-1. Generate the app with vue and webpacker
+1. **Generate the app with vue and webpacker**
 
 ```
 rvm use your-version # 2.5.2 or whatever version the latest is. RVM not required ofc, use rbenv or anything of your choice. It will put this ruby version on top of your Gemfile. 
@@ -20,7 +20,7 @@ git add .
 git commit -am "ran rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql"
 ```
 
-2. Initial commit and prep work
+2. **Initial commit and prep work**
 
 ```
 cp config/database.yml config/database.yml.sample.generated
@@ -36,7 +36,7 @@ git commit -m "add database config"
 ```    
 
 
-3. Copy the gemfile and bundle install. Here is our recomendation: 
+3. **Copy the gemfile and bundle install. Here is our recomendation:** 
  https://github.com/rubynor/rails-setup/blob/master/Gemfile
 
 ``` 
@@ -48,7 +48,7 @@ bundle install
 git commit -am "install recommended gems"
 ```    
 
-4. Run the following commands
+4. **Run the following commands**
 
 ```
 rails generate haml:application_layout convert
@@ -60,7 +60,7 @@ git diff
 git commit -am "install haml and rspec"
 ```
 
-5. Environment variables
+5. **Environment variables**
 
 We use `dotenv-rails` to manage environment variables.
 ```
@@ -74,7 +74,7 @@ git add . && git commit -am "add dot-env"
 
 
 
-6. Foreman for running webpack server and rails server together
+6. **Foreman for running webpack server and rails server together**
 
 ```
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/Procfile.dev > Procfile.dev
@@ -84,7 +84,7 @@ curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.foreman >
 foreman start
 ```
 
-7. Devise for handling authentication
+7. **Devise for handling authentication**
 
 ```
 rails generate devise:install
@@ -110,7 +110,7 @@ rails generate devise:views
 
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
-8. Autotesting using Guard
+8. **Autotesting using Guard**
 
 To set up guard you have to generate a Guardfile.
 
@@ -128,7 +128,7 @@ If you prefer to run guard in a seperate window, remove it from `Procfile.dev` a
 guard -c
 ``` 
 
-9. Background jobs. Sidekiq
+9. **Background jobs. Sidekiq**
 
 
 ## BEST PRACTICES Config
