@@ -9,5 +9,5 @@ group :development, :test do
   gem 'guard-rspec', require: false # automatically run tests on changes
   gem 'dotenv-rails' # Handle env vars
   gem 'capybara'     # Write tests that simulate how your users will use your application
-  gem 'forman'       # To run app and webpack together
+  gem 'foreman'       # To run app and webpack together
 end
