@@ -13,6 +13,7 @@ rvm use your-version # 2.5.2 or whatever version the latest is. RVM not required
 gem install rails # Get latest stable release
 rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
 cd the-rubynor-app
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.gitignore-additions >> .gitignore
 git init .
 git status # check for junk files, edit your .gitignore to exclude
 git add .
@@ -23,9 +24,8 @@ git commit -am "ran rails new the-rubynor-app --webpack=vue --skip-test --databa
 
 ```
 cp config/database.yml config/database.yml.sample.generated
-curl -sS > https://raw.githubusercontent.com/rubynor/rails-setup/master/config/database.yml.sample > config/database.yml.sample
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/database.yml.sample > config/database.yml.sample
 cp config/database.yml.sample config/database.yml
-curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.gitignore-additions >> .gitignore
 
 git diff # double check that database.yml is ignored.
 rake db:create db:migrate # don't proceed until this works.
