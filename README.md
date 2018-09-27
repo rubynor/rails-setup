@@ -30,6 +30,9 @@ cp config/database.yml.sample config/database.yml
 git diff # double check that database.yml is ignored. Did you put the .gitignore_global in your home dir?
 rake db:create db:migrate # don't proceed until this works.
 
+git add .
+git commit -m "add database config"
+
 ```    
 
 
