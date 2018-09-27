@@ -1,0 +1,23 @@
+<% my_app_name = Rails.application.class.parent_name %>
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: <%= my_app_name %>_dev
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+#
+# The TEST_ENV_NUMBER ENV var is for gem parallel
+test:
+  <<: *default
+  database: <%= my_app_name %>_test<%= ENV['TEST_ENV_NUMBER'] %>
