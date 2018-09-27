@@ -9,6 +9,8 @@
 
 ```
 rvm use your-version # 2.5.2 or whatever version the latest is. RVM not required ofc, use rbenv or anything of your choice. It will put this ruby version on top of your Gemfile. 
+
+gem install rails # Get latest stable release
 rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
 ```
 
