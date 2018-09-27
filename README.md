@@ -8,6 +8,7 @@
 1. Generate the app with vue and webpacker
 
 ```
+rvm use 2.5.2 # or whatever the latest is
 rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
 ```
 
