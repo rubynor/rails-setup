@@ -112,12 +112,19 @@ You should restart your application after changing Devise's configuration option
 
 8. Autotesting using Guard
 
-```
-A. use default: bundle exec guard init rspec
-or
-B. use ours: curl -sS
+To set up guard you have to generate a Guardfile.
 
-Start guard.
+```
+bundle exec guard init rspec
+```
+
+Guard has been added to `Procfile.dev`, and can be started, with 
+```
+foreman start
+```
+
+If you prefer to run guard in a seperate window, remove it from `Procfile.dev` and run one of the following command:
+```
 guard -c
 ``` 
 
