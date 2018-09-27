@@ -12,7 +12,7 @@ rvm use your-version # 2.5.2 or whatever version the latest is. RVM not required
 
 gem install rails # Get latest stable release
 rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql
-
+cd the-rubynor-app
 git init .
 git status # check for junk files, edit your .gitignore to exclude
 git add .
@@ -22,7 +22,6 @@ git commit -am "ran rails new the-rubynor-app --webpack=vue --skip-test --databa
 2. Initial commit and prep work
 
 ```
-cd the-rubynor-app
 cp config/database.yml config/database.yml.sample.generated
 curl -sS > https://raw.githubusercontent.com/rubynor/rails-setup/master/config/database.yml.sample > config/database.yml.sample
 cp config/database.yml.sample config/database.yml
