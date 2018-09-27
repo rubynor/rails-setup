@@ -43,7 +43,6 @@ git commit -am "install recommended gems"
 rails generate haml:application_layout convert
 rm app/views/layouts/application.html.erb # as the above script instructs you to do manually
 rails generate rspec:install
-bundle exec guard init rspec
 git add.
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rspec > .rspec
 git diff
@@ -100,7 +99,18 @@ rails generate devise:views
 
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
-8. Background jobs. Sidekiq
+8. Autotesting using Guard
+
+```
+A. use default: bundle exec guard init rspec
+or
+B. use ours: curl -sS
+
+Start guard.
+guard -c
+``` 
+
+9. Background jobs. Sidekiq
 
 
 ## BEST PRACTICES Config
