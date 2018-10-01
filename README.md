@@ -126,6 +126,7 @@ You should restart your application after changing Devise's configuration option
 
 9. **Background jobs. Sidekiq**
 
+To use sidekiq to handle background jobs with Active Job, check out instructions [here](https://github.com/mperham/sidekiq/wiki/Active+Job)
 
 ## BEST PRACTICES Config
 
