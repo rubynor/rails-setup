@@ -130,8 +130,8 @@ You must have redis installed to use sidekiq. By default, Sidekiq tries to conne
 
 Installing redis is different depending on which OS you are using. Please refer to instructions for your system:
 
-[--> Mac OS](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
-[--> Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04)
+- [--> Mac OS](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
+- [--> Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04)
 
 To use sidekiq to handle background jobs with Active Job, check out instructions [here](https://github.com/mperham/sidekiq/wiki/Active+Job)
 
