@@ -88,10 +88,6 @@ Guard has been added to `Procfile.dev`, and can be started, with
 foreman start
 ```
 
-If you prefer to run guard in a seperate window, remove it from `Procfile.dev` and run one of the following command:
-```
-guard -c
-``` 
 
 
 7. **Foreman for running webpack server and rails server together**
