@@ -81,6 +81,8 @@ To set up guard you have to generate a Guardfile.
 bundle exec guard init rspec
 ```
 
+Edit Guardfile and change to `guard :rspec, cmd: "rspec --tty"`
+
 Guard has been added to `Procfile.dev`, and can be started, with 
 ```
 foreman start
