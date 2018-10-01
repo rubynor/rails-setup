@@ -93,23 +93,15 @@ git commit -m "add foreman"
 rails generate devise:install
 ```
 
-At this point, a number of instructions will appear in the console. Among these instructions, you'll need to set up the default URL options for the Devise mailer in each environment. Here is a possible configuration for `config/environments/development.rb`:
+Follow the instructions, including step 4 to copy the views.
 
-```
-config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-```
-
-Generate your user model or whatever you want to call it
+Then generate your user model
 
 ```
 rails generate devise User email:string name:string
 ```
 
-Override devise views, so they can be customized
-
-```
-rails generate devise:views
-```
+and enable `confirmable`, `trackable` and `lockable`. This is tedious but important work. See how at https://github.com/plataformatec/devise
 
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
