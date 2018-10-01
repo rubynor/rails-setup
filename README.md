@@ -73,8 +73,26 @@ git add . && git commit -am "add dot-env"
 ```
 
 
+6. **Autotesting using Guard**
 
-6. **Foreman for running webpack server and rails server together**
+To set up guard you have to generate a Guardfile.
+
+```
+bundle exec guard init rspec
+```
+
+Guard has been added to `Procfile.dev`, and can be started, with 
+```
+foreman start
+```
+
+If you prefer to run guard in a seperate window, remove it from `Procfile.dev` and run one of the following command:
+```
+guard -c
+``` 
+
+
+7. **Foreman for running webpack server and rails server together**
 
 ```
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/Procfile.dev > Procfile.dev
@@ -87,7 +105,7 @@ git add .
 git commit -m "add foreman"
 ```
 
-7. **Devise for handling authentication**
+8. **Devise for handling authentication**
 
 ```
 rails generate devise:install
@@ -105,23 +123,6 @@ and enable `confirmable`, `trackable` and `lockable`. This is tedious but import
 
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
-8. **Autotesting using Guard**
-
-To set up guard you have to generate a Guardfile.
-
-```
-bundle exec guard init rspec
-```
-
-Guard has been added to `Procfile.dev`, and can be started, with 
-```
-foreman start
-```
-
-If you prefer to run guard in a seperate window, remove it from `Procfile.dev` and run one of the following command:
-```
-guard -c
-``` 
 
 9. **Background jobs. Sidekiq**
 
