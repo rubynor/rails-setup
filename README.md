@@ -82,6 +82,9 @@ curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.foreman >
 
 #To run
 foreman start
+
+git add .
+git commit -m "add foreman"
 ```
 
 7. **Devise for handling authentication**
