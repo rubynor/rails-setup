@@ -2,6 +2,7 @@ gem 'haml-rails'     # Use haml instead of erb
 gem 'pry-rails'      # Pretty print in rails console and set debug breakpoints in server console
 gem 'honeybadger'    # honeybadger error reporting tool
 gem 'devise'         # Devise is a flexible authentication solution for Rails based on Warden
+gem 'sidekiq'        # Background jobs
 
 group :development, :test do
   gem 'rspec-rails'  # Testing framework
