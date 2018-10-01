@@ -3,6 +3,19 @@
 ehthumbs.db
 Icon\?
 Thumbs.db
-logfile
+
 .bundle
 public/assets
+
+# Ignore all logfiles and tempfiles.
+log/**/*
+tmp/**/*
+logfile
+/yarn-error.log
+.byebug_history
+
+# Ignore uploaded files in development
+storage/**/*
+
+# Ignore Emacs temp files
+*~
