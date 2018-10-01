@@ -1,5 +1,7 @@
 --require spec_helper
 # uncomment the below to show a dot for each example instead of the verbose version
 --format documentation
-#show the 10 slowest examples:
+# show the 10 slowest examples:
 --profile
+# The --color option is required for color output when running foreman
+--color
