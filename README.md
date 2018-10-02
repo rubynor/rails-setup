@@ -193,3 +193,22 @@ In your test helper file you have to add the following
 ```
 require 'capybara/rails'
 ```
+
+## CODESTYLE and CODE QUALITY
+
+```
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rubocop.yml > .rubocop.yml
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.codeclimate.yml > .codeclimate.yml
+
+git add . 
+git commit -m "Add rubocop and codeclimate config"
+
+# the gems rubocop and overcommit are already in the Gemfile above.
+overcommit --install
+
+# TEST it. my advice is going into user.rb and creating a method with poorly formatted code and see if you are prevented from committing.
+```
+
+*Codeclimate*
+
+Enable codeclimate for your github repository. Have fun challenging yourself :)
