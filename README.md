@@ -171,7 +171,7 @@ You can and should exclude unimportant fields. Read more
 
 We like RSpec with Fabricator, and RSpec with Capybara for browser integration specs (aka feature specs). Don't make too many and don't make too few, but most importantly, don't make to many feature specs, they come at a high cost (maintanence, feedback delays because of slow tests (MUDA))
 
-**Testing in parallel:**
+###Testing in parallel:
 Use parallel_tests when your test suite becomes slow over time. 
 
 This [database.yml.example](https://github.com/rubynor/rails-setup/blob/master/database.yml.sample) should be set up according to instructions on the gem's [documentation](https://github.com/grosser/parallel_tests) 
