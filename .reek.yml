@@ -1,0 +1,38 @@
+---
+
+detectors:
+  IrresponsibleModule: # This nags about classes not having a descriptive comment.
+    enabled: false
+  UncommunicativeVariableName: # prevents using 'e' as variable name when catching errors... Not a stupid rule, but too binary
+    enabled: false
+  UtilityFunction: # says that all methods independent of instance variables should be moved to own class. Ole both agree and disagree, it is no better with a million classes than a millions methods, must be able to group utility methods logically
+    enabled: false
+
+  # You can use filters to silence Reek warnings.
+  # Either because you simply disagree with Reek (we are not the police) or
+  # because you want to fix this at a later point in time.
+  NestedIterators:
+    exclude:
+    - "MyWorker#self.class_method" # should be refactored
+    - "AnotherWorker#instance_method" # should be refactored as well
+
+
+### Directory specific configuration
+
+# You can configure smells on a per-directory base.
+# E.g. the classic Rails case: controllers smell of NestedIterators (see /docs/Nested-Iterators.md) and
+# helpers smell of UtilityFunction (see docs/Utility-Function.md)
+# Note that we only allow configuration on a directory level, not a file level, so all paths have to point to directories.
+directories:
+  "app/controllers":
+    TooManyStatements:
+      max_statements: 9 # allow controller actions to keep 'respond_to do |format|' of multiple formats inside the action.
+#
+#### Excluding directories
+## Directories below will not be scanned at all
+exclude_paths:
+- "spec/"
+- "**/vendor/"
+- 'app/assets/javascripts/js/'
+- 'app/assets/javascripts/tinyMCE/'
+- 'db'

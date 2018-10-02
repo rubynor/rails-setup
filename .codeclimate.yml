@@ -2,16 +2,28 @@ exclude_patterns:
 - "spec/"
 - "**/vendor/"
 - 'config/initializers/simple_form_bootstrap.rb'
+- 'app/controllers/authentication/confirmations_controller.rb'
+- 'app/assets/javascripts/js/'
+- 'app/assets/javascripts/tinyMCE/'
 - 'db'
-#- 'app/assets/javascripts/js/'
-#- 'app/assets/javascripts/tinyMCE/'
 plugins:
   reek:
+    enabled: true # uses rules from .reek.yml
+  rubcop:
+    enabled: true # uses rules from .rubocop.yml
+  brakeman:
     enabled: true
-    checks:
-      IrresponsibleModule: # This nags about classes not having a descriptive comment.
-        enabled: false
-      UncommunicativeVariableName: # prevents using 'e' as variable name when catching errors... Not a stupid rule, but too binary
-        enabled: false
-      UtilityFunction: # says that all methods independent of instance variables should be moved to own class. We both agree and disagree, problem is that this rule is too binary to be helpful. It is no better with a million classes than a millions methods, must be able to group utility methods logically
-        enabled: false
+  flog:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  coffeelint:
+    enabled: true
+  eslint:
+    enabled: true
+  haml-lint:
+    enabled: true
+  scss-lint:
+    enabled: true
+  sass-lint:
+    enabled: true
