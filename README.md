@@ -197,11 +197,13 @@ require 'capybara/rails'
 ## CODESTYLE and CODE QUALITY
 
 ```
-curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rubocop.yml > .rubocop.yml
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.codeclimate.yml > .codeclimate.yml
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rubocop.yml > .rubocop.yml
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.reek.yml > .reek.yml
+
 
 git add . 
-git commit -m "Add rubocop and codeclimate config"
+git commit -m "Add rubocop, reek and codeclimate config"
 
 # the gems rubocop and overcommit are already in the Gemfile above.
 overcommit --install
