@@ -1,0 +1,60 @@
+# See rules at: https://github.com/rubocop-hq/rubocop/tree/master/config
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'db/**/*'
+    - 'doc/**/*'
+    - 'bin/**/*'
+    - 'app/controllers/authentication/confirmations_controller.rb' # Devise generated
+
+Documentation:
+ Enabled: false
+
+Metrics/LineLength:
+  Description: 'Limit lines to 160 characters.'
+  StyleGuide: '#80-character-limits'
+  Enabled: true
+  Max: 160
+
+Style/AsciiComments:
+  Description: 'Prevented æ ø å from being used as example in comments. '
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: true
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+ Enabled: false
+
+Metrics/AbcSize:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: true
+  CountComments: false  # count full line comments?
+  Max: 25
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
