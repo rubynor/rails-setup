@@ -174,8 +174,19 @@ We like RSpec with Fabricator, and RSpec with Capybara for browser integration s
 ### Testing in parallel:
 Use parallel_tests when your test suite becomes slow over time. 
 
-This [database.yml.example](https://github.com/rubynor/rails-setup/blob/master/database.yml.sample) should be set up according to instructions on the gem's [documentation](https://github.com/grosser/parallel_tests) 
+Follow the gem's [documentation](https://github.com/grosser/parallel_tests) on how to set it up. You will find an example [database.yml.example](https://github.com/rubynor/rails-setup/blob/master/database.yml.sample) in this repo.
 
+Copy `.rspec_parallel` to your repo. 
+
+```
+curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rspec_parallel > .rspec_parallel
+```
+
+To run specs in parallel:
+
+```
+rake parallel:spec
+```
 
 ### Capybara
 In your test helper file you have to add the following
