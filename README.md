@@ -214,13 +214,12 @@ overcommit --install
 
 # TEST it. my advice is going into user.rb and creating a method with poorly formatted code and see if you are prevented from committing.
 
-
 git add .
 # if you don't have changes, that's ok
 git commit -m "rubocop overcommit" 
 
 ```
 
-*Codeclimate*
+### Codeclimate
 
 Enable codeclimate for your github repository. Have fun challenging yourself :)
