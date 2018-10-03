@@ -13,5 +13,5 @@ group :development, :test do
   gem 'foreman'      # To run app and webpack together
   gem 'rubocop'      # code style rules
   gem 'overcommit'   # Run Rubucop rules when committing
-  gem 'parallel'     # rails parallel:spec to run specs in parallel
+  gem 'parallel_tests'     # rails parallel:spec to run specs in parallel
 end
