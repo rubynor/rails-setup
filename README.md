@@ -174,7 +174,6 @@ We like RSpec with Fabricator, and RSpec with Capybara for browser integration s
 ### Testing in parallel:
 Use parallel_tests when your test suite becomes slow over time. 
 
-Follow the gem's [documentation](https://github.com/grosser/parallel_tests) on how to set it up. You will find an example [database.yml.example](https://github.com/rubynor/rails-setup/blob/master/database.yml.sample) in this repo.
 
 Copy `.rspec_parallel` to your repo. 
 
@@ -182,10 +181,15 @@ Copy `.rspec_parallel` to your repo.
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rspec_parallel > .rspec_parallel
 ```
 
+Follow the gem's [documentation](https://github.com/grosser/parallel_tests) on how to set it up. 
+
+You will find an example [database.yml.sample](https://github.com/rubynor/rails-setup/blob/master/database.yml.sample) in this repo.
+
+
 To run specs in parallel:
 
 ```
-rake parallel:spec
+rails parallel:spec
 ```
 
 ### Capybara
@@ -209,6 +213,12 @@ git commit -m "Add rubocop, reek and codeclimate config"
 overcommit --install
 
 # TEST it. my advice is going into user.rb and creating a method with poorly formatted code and see if you are prevented from committing.
+
+
+git add .
+# if you don't have changes, that's ok
+git commit -m "rubocop overcommit" 
+
 ```
 
 *Codeclimate*
