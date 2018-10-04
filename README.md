@@ -103,7 +103,7 @@ git add .
 git commit -m "add foreman"
 ```
 
-8. Optional. A scaffold that doesn't suck
+1. **Optional. A scaffold that doesn't suck**
 
 ```
 rails generate scaffold sausage length:integer name:string price:float --no-assets --no-helper --no-jbuilder --no-view-specs
@@ -113,24 +113,24 @@ rails destroy scaffold sausage length:integer name:string price:float --no-asset
 
 ```
 
-9. **Devise for handling authentication**
+1. Devise for handling authentication**
 
-1.
+  1.
 ```
 rails generate devise:install
 ```
 
-2. Follow the instructions, including step 4 to copy the views.
+  2. Follow the instructions, including step 4 to copy the views.
 
-3. Then generate your user model
+  3. Then generate your user model
 
 ```
 rails generate devise User email:string name:string
 ```
 
-4. Activate the Authentication regime
+  4. Activate the Authentication regime
 
-a. Global authenticate? Edit your application_controller.rb
+  a. Global authenticate? Edit your application_controller.rb
 ```
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
@@ -138,7 +138,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-b. Public pages? Set skip authenticate
+  b. Public pages? Set skip authenticate
 
 Example
 
