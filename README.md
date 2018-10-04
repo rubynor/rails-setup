@@ -115,6 +115,8 @@ rails destroy scaffold sausage length:integer name:string price:float --no-asset
 
 9. **Devise for handling authentication**
 
+Må det værra no her?
+
   1. install
 ```
 rails generate devise:install
