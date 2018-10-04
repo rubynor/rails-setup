@@ -23,6 +23,7 @@
   - [Capybara](#capybara)
 - [CODESTYLE and CODE QUALITY](#codestyle-and-code-quality)
   - [Codeclimate](#codeclimate)
+- [Contribute](#contribute)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -292,3 +293,7 @@ git commit -m "rubocop overcommit"
 ### Codeclimate
 
 Enable codeclimate for your github repository. Have fun challenging yourself :)
+
+## Contribute
+
+If you want to contribute you can just edit the files directly. Run DocToc to generate the table of contents, if any new headers have been added.
