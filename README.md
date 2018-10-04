@@ -21,9 +21,9 @@
  - Global gitignore in your home directory `~/.gitignore_global` .ie this:  https://github.com/rubynor/rails-setup/blob/master/.gitignore_global
 
 
-### Our prefered rails setup
+## Stepwise Guide for a Good Rails Setup
 
-1. **Generate the app with vue and webpacker**
+### 1. Generate the app with vue and webpacker
 
 ```
 rvm use your-version # 2.5.2 or whatever version the latest is. RVM not required ofc, use rbenv or anything of your choice. It will put this ruby version on top of your Gemfile. 
@@ -38,7 +38,7 @@ git add .
 git commit -am "ran rails new the-rubynor-app --webpack=vue --skip-test --database=postgresql"
 ```
 
-2. **Initial commit and prep work**
+### 2. Initial commit and prep work
 
 ```
 cp config/database.yml config/database.yml.sample.generated
@@ -54,7 +54,7 @@ git commit -m "add database config"
 ```    
 
 
-3. **Copy the gemfile and bundle install. Here is our recomendation:** 
+### 3. Copy the gemfile and bundle install. Here is our recomendation:
  https://github.com/rubynor/rails-setup/blob/master/Gemfile
 
 ``` 
@@ -66,7 +66,7 @@ bundle install
 git commit -am "install recommended gems"
 ```    
 
-4. **Run the following commands**
+### 4. Run the following commands
 
 ```
 rails generate haml:application_layout convert
@@ -78,7 +78,7 @@ git diff
 git commit -am "install haml and rspec"
 ```
 
-5. **Environment variables**
+### 5. Environment variables
 
 We use `dotenv-rails` to manage environment variables.
 ```
@@ -91,7 +91,7 @@ git add . && git commit -am "add dot-env"
 ```
 
 
-6. **Autotesting using Guard**
+### 6. Autotesting using Guard
 
 To set up guard you have to generate a Guardfile.
 
@@ -105,7 +105,7 @@ In next section, you'll see how to autostart Guard with foreman, as guard has be
 
 
 
-7. **Foreman for running webpack server and rails server together**
+### 7. Foreman for running webpack server and rails server together
 
 ```
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/Procfile.dev > Procfile.dev
@@ -121,7 +121,7 @@ git add .
 git commit -m "add foreman"
 ```
 
-8. **Optional. A scaffold that doesn't suck**
+### 8. Optional. A scaffold that doesn't suck
 
 ```
 rails generate scaffold sausage length:integer name:string price:float --no-assets --no-helper --no-jbuilder --no-view-specs
@@ -131,7 +131,7 @@ rails destroy scaffold sausage length:integer name:string price:float --no-asset
 
 ```
 
-9. **Devise for handling authentication**
+### 9. Devise for handling authentication
 
 We seem to always fall back to devise <3
 
@@ -181,7 +181,7 @@ end
 Note: You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
 
-10. **Background jobs. Sidekiq**
+### 10. Background jobs. Sidekiq
 
 You must have redis installed to use sidekiq. By default, Sidekiq tries to connect to Redis at localhost:6379.
 
