@@ -3,7 +3,17 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Checklist before you start](#checklist-before-you-start)
-  - [Our prefered rails setup](#our-prefered-rails-setup)
+- [Stepwise Guide for a Good Rails Setup](#stepwise-guide-for-a-good-rails-setup)
+  - [1. Generate the app with vue and webpacker](#1-generate-the-app-with-vue-and-webpacker)
+  - [2. Initial commit and prep work](#2-initial-commit-and-prep-work)
+  - [3. Copy the gemfile and bundle install. Here is our recomendation:](#3-copy-the-gemfile-and-bundle-install-here-is-our-recomendation)
+  - [4. Run the following commands](#4-run-the-following-commands)
+  - [5. Environment variables](#5-environment-variables)
+  - [6. Autotesting using Guard](#6-autotesting-using-guard)
+  - [7. Foreman for running webpack server and rails server together](#7-foreman-for-running-webpack-server-and-rails-server-together)
+  - [8. Optional. A scaffold that doesn't suck](#8-optional-a-scaffold-that-doesnt-suck)
+  - [9. Devise for handling authentication](#9-devise-for-handling-authentication)
+  - [10. Background jobs. Sidekiq](#10-background-jobs-sidekiq)
 - [BEST PRACTICES Config](#best-practices-config)
 - [PRODUCTION TOOLS](#production-tools)
   - [Error Catcher. Honeybadger](#error-catcher-honeybadger)
