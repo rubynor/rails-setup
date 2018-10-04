@@ -115,21 +115,49 @@ rails destroy scaffold sausage length:integer name:string price:float --no-asset
 
 9. **Devise for handling authentication**
 
+1.
 ```
 rails generate devise:install
 ```
 
-Follow the instructions, including step 4 to copy the views.
+2. Follow the instructions, including step 4 to copy the views.
 
-Then generate your user model
+3. Then generate your user model
 
 ```
 rails generate devise User email:string name:string
 ```
 
-and enable `confirmable`, `trackable` and `lockable`. This is tedious but important work. See how at https://github.com/plataformatec/devise
+4. Activate the Authentication regime
 
-You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
+a. Global authenticate? Edit your application_controller.rb
+```
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+  before_action :authenticate_user!
+end
+```
+
+b. Public pages? Set skip authenticate
+
+Example
+
+```
+class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home]
+  def home
+  end
+end
+```
+
+5. Test. Restart app
+
+
+6. Enable `confirmable`, `lockable` and perhaps `trackable`.  This is tedious but important work. See how at https://github.com/plataformatec/devise
+
+7. Test that it works before proceeding, dummy!
+
+Note: You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
 
 10. **Background jobs. Sidekiq**
