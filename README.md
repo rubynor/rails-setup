@@ -83,10 +83,7 @@ bundle exec guard init rspec
 
 Edit Guardfile and change to `guard :rspec, cmd: "rspec --tty"`
 
-Guard has been added to `Procfile.dev`, and can be started, with 
-```
-foreman start
-```
+In next section, you'll see how to autostart Guard with foreman, as guard has been added to `Procfile.dev`. Too cool!
 
 
 
@@ -99,11 +96,24 @@ curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.foreman >
 #To run
 foreman start
 
+# Ceck it! Browse to 
+# localhost:5000
+
 git add .
 git commit -m "add foreman"
 ```
 
-8. **Devise for handling authentication**
+8. Optional. A scaffold that doesn't suck
+
+```
+rails generate scaffold sausage length:integer name:string price:float --no-assets --no-helper --no-jbuilder --no-view-specs
+
+#To reverse
+rails destroy scaffold sausage length:integer name:string price:float --no-assets --no-helper --no-jbuilder --no-view-specs
+
+```
+
+9. **Devise for handling authentication**
 
 ```
 rails generate devise:install
@@ -122,7 +132,7 @@ and enable `confirmable`, `trackable` and `lockable`. This is tedious but import
 You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
 
-9. **Background jobs. Sidekiq**
+10. **Background jobs. Sidekiq**
 
 You must have redis installed to use sidekiq. By default, Sidekiq tries to connect to Redis at localhost:6379.
 
