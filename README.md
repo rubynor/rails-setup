@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Checklist before you start](#checklist-before-you-start)
+  - [Our prefered rails setup](#our-prefered-rails-setup)
+- [BEST PRACTICES Config](#best-practices-config)
+- [PRODUCTION TOOLS](#production-tools)
+  - [Error Catcher. Honeybadger](#error-catcher-honeybadger)
+  - [Logging. Papertrail](#logging-papertrail)
+- [TESTING](#testing)
+  - [Testing in parallel:](#testing-in-parallel)
+  - [Capybara](#capybara)
+- [CODESTYLE and CODE QUALITY](#codestyle-and-code-quality)
+  - [Codeclimate](#codeclimate)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Checklist before you start
 
  - Global gitignore in your home directory `~/.gitignore_global` .ie this:  https://github.com/rubynor/rails-setup/blob/master/.gitignore_global
