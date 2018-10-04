@@ -115,9 +115,9 @@ rails destroy scaffold sausage length:integer name:string price:float --no-asset
 
 9. **Devise for handling authentication**
 
-Må det værra no her?
+We seem to always fall back to devise <3
 
-  1. install
+  1. Install
 ```
 rails generate devise:install
 ```
@@ -132,19 +132,20 @@ rails generate devise User email:string name:string
 
   4. Activate the Authentication regime
 
-  a. Global authenticate? Edit your application_controller.rb
 ```
+# A: Global authenticate? Edit your application_controller.rb
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 end
 ```
 
-  b. Public pages? Set skip authenticate
-
-Example
+  
 
 ```
+# B: Public pages? Set skip authenticate
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
   def home
