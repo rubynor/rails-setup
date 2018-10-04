@@ -103,7 +103,7 @@ git add .
 git commit -m "add foreman"
 ```
 
-1. **Optional. A scaffold that doesn't suck**
+8. **Optional. A scaffold that doesn't suck**
 
 ```
 rails generate scaffold sausage length:integer name:string price:float --no-assets --no-helper --no-jbuilder --no-view-specs
@@ -113,9 +113,9 @@ rails destroy scaffold sausage length:integer name:string price:float --no-asset
 
 ```
 
-1. Devise for handling authentication**
+9. **Devise for handling authentication**
 
-  1.
+  1. install
 ```
 rails generate devise:install
 ```
