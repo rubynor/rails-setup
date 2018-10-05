@@ -230,9 +230,13 @@ In the Gemfile, we also added bullet
 gem 'bullet' # set env BULLET = true to activate. Bullet help to kill N+1 queries and unused eager loading
 ```
 
-It'll show warnings when you browse the app locally.
+It's not ready to run, you can do both or one of these:
 
-You can also activate in test.
+**A: Active for dev env. It'll show warnings when you browse the app locally.***
+
+Follow the instructions. Yep, boring, but you learn more this way: https://github.com/flyerhzm/bullet#configuration
+
+**B: Activate in test.**
 
 ```
 #test.rb
