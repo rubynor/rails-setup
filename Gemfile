@@ -16,3 +16,7 @@ group :development, :test do
   gem 'overcommit'   # Run Rubucop rules when committing
   gem 'parallel_tests'     # rails parallel:spec to run specs in parallel
 end
+
+group :development do
+  gem 'lol_dba' # 'rake db:find_indexes' to get hints about missing indexes. https://github.com/plentz/lol_dba
+end
