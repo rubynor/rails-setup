@@ -203,13 +203,60 @@ Installing redis is different depending on which OS you are using. Please refer 
 
 To use sidekiq to handle background jobs with Active Job, check out instructions [here](https://github.com/mperham/sidekiq/wiki/Active+Job)
 
-## BEST PRACTICES Config
+## ADVICE
 
+### Configs
 application.rb :
 
 ```
     # Raise on unpermitted parameters. Silent failures are bad
     config.action_controller.action_on_unpermitted_parameters = :raise
+```
+
+## MONTHLY ROUTINE
+
+### DATABASE  - lol_dba
+
+In the Gemfile, we included this:
+```
+gem 'lol_dba' # 'rake db:find_indexes' to get hints about missing indexes. https://github.com/plentz/lol_dba
+```
+
+### DATABASE - bullet
+
+In the Gemfile, we also added bullet
+
+```
+gem 'bullet' # set env BULLET = true to activate. Bullet help to kill N+1 queries and unused eager loading
+```
+
+It'll show warnings when you browse the app locally.
+
+You can also activate in test.
+
+```
+#test.rb
+config.after_initialize do
+  Bullet.enable = ENV['BULLET'] == "true"
+  Bullet.bullet_logger = true
+  Bullet.raise = true # raise an error if n+1 query occurs
+end
+
+#spec_helper.rb or rails_helper.rb
+
+  # Bullet helps discover n+1 and unused eager_loading
+  if Bullet.enable?
+    config.before(:each) do
+      Bullet.start_request
+    end
+
+    config.after(:each) do
+      Bullet.perform_out_of_channel_notifications if Bullet.notification?
+      Bullet.end_request
+    end
+  end
+
+$ BULLET=true rspec spec
 ```
 
 ## PRODUCTION TOOLS
@@ -296,4 +343,14 @@ Enable codeclimate for your github repository. Have fun challenging yourself :)
 
 ## Contribute
 
-If you want to contribute you can just edit the files directly. Run DocToc to generate the table of contents, if any new headers have been added.
+Externals: Create Issue with proposal.
+Internals: Direct edit on Github master is OK.
+
+If made changes to titles, run DocToc to update Table of Content
+
+```
+git pull
+doctoc .
+git commit -am "doctoc"
+git push
+``
