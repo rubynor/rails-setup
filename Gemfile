@@ -14,7 +14,8 @@ group :development, :test do
   gem 'foreman'      # To run app and webpack together
   gem 'rubocop'      # code style rules
   gem 'overcommit'   # Run Rubucop rules when committing
-  gem 'parallel_tests'     # rails parallel:spec to run specs in parallel
+  gem 'parallel_tests' # rails parallel:spec to run specs in parallel
+  gem 'bullet'       # Set env BULLET = true to activate. Bullet help to kill N+1 queries and unused eager loading
 end
 
 group :development do
