@@ -345,6 +345,11 @@ git commit -m "rubocop overcommit"
 
 Enable codeclimate for your github repository. Have fun challenging yourself :)
 
+## Performance
+
+Use gem jemalloc to greatly reduce memory usage. https://medium.com/rubyinside/how-we-halved-our-memory-consumption-in-rails-with-jemalloc-86afa4e54aa3
+
+
 ## Contribute
 
 Externals: Create Issue with proposal.
