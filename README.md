@@ -14,7 +14,11 @@
   - [8. Optional. A scaffold that doesn't suck](#8-optional-a-scaffold-that-doesnt-suck)
   - [9. Devise for handling authentication](#9-devise-for-handling-authentication)
   - [10. Background jobs. Sidekiq](#10-background-jobs-sidekiq)
-- [BEST PRACTICES Config](#best-practices-config)
+- [ADVICE](#advice)
+  - [Configs](#configs)
+- [MONTHLY ROUTINE](#monthly-routine)
+  - [DATABASE  - lol_dba](#database----lol_dba)
+  - [DATABASE - bullet](#database---bullet)
 - [PRODUCTION TOOLS](#production-tools)
   - [Error Catcher. Honeybadger](#error-catcher-honeybadger)
   - [Logging. Papertrail](#logging-papertrail)
@@ -23,6 +27,7 @@
   - [Capybara](#capybara)
 - [CODESTYLE and CODE QUALITY](#codestyle-and-code-quality)
   - [Codeclimate](#codeclimate)
+- [Performance](#performance)
 - [Contribute](#contribute)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -347,7 +352,20 @@ Enable codeclimate for your github repository. Have fun challenging yourself :)
 
 ## Performance
 
-Use gem jemalloc to greatly reduce memory usage. https://medium.com/rubyinside/how-we-halved-our-memory-consumption-in-rails-with-jemalloc-86afa4e54aa3
+Use jemalloc to greatly reduce memory usage. https://medium.com/rubyinside/how-we-halved-our-memory-consumption-in-rails-with-jemalloc-86afa4e54aa3
+
+On heroku, add buildpack:
+
+heroku buildpacks:add --index 1 https://github.com/gaffneyc/heroku-buildpack-jemalloc.git -r staging
+heroku config:set JEMALLOC_ENABLED=true -r staging
+
+In Procfile
+
+```
+web: jemalloc.sh bundle exec puma -C config/puma.rb
+worker: jemalloc.sh bundle exec sidekiq -q sidekiq_queue -c 5 -v
+``` 
+
 
 
 ## Contribute
