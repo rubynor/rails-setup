@@ -161,7 +161,8 @@ rails generate devise:install
   3. Then generate your user model
 
 ```
-rails generate devise User email:string name:string
+rails generate devise User name:string
+rails db:migrate
 ```
 
   4. Activate the Authentication regime
@@ -207,6 +208,34 @@ Installing redis is different depending on which OS you are using. Please refer 
 - [--> Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04)
 
 To use sidekiq to handle background jobs with Active Job, check out instructions [here](https://github.com/mperham/sidekiq/wiki/Active+Job)
+
+### 11. API. Graphql-ruby
+
+    gem 'graphql'
+    bundle
+    rails generate graphql:install
+    
+Enable current_user for scoping
+
+    # graphql_controller.rb
+    
+    #see context hash, change to 
+     context = {
+      # Query context goes here, for example:
+      current_user: current_user,
+     }
+    
+    # open base_object.rb
+    module Types
+      class BaseObject < GraphQL::Schema::Object
+        def current_user
+          context[:current_user]
+        end
+      end
+    end
+
+See the github repo graphql training ground for more examples: 
+https://github.com/rubynor/graphql-ruby-training-ground
 
 ## ADVICE
 
