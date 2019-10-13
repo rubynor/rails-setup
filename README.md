@@ -14,6 +14,7 @@
   - [8. Optional. A scaffold that doesn't suck](#8-optional-a-scaffold-that-doesnt-suck)
   - [9. Devise for handling authentication](#9-devise-for-handling-authentication)
   - [10. Background jobs. Sidekiq](#10-background-jobs-sidekiq)
+  - [11. API. Graphql-ruby](#11-api-graphql-ruby)
 - [ADVICE](#advice)
   - [Configs](#configs)
 - [MONTHLY ROUTINE](#monthly-routine)
