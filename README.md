@@ -198,6 +198,30 @@ end
 
 Note: You should restart your application after changing Devise's configuration options (this includes stopping spring). Otherwise, you will run into strange errors, for example, users being unable to login and route helpers being undefined.
 
+Extras:
+
+A: Allow password reset link to confirm unconfirmed emails (because you got the password reset link by email).
+
+It may have security implications in some undisclosed cases, so your choice. I guess you would minimum have 2FA+ needs before not using this patch for convenience of the users:
+
+```
+class PasswordsController < Devise::PasswordsController
+  def update
+    super do |resource|
+      resource.confirm if invite_confirmable?(resource)
+    end
+  end
+
+  private
+
+  def invite_confirmable?(resource)
+    # You can add whatever business logic you like here to decide if a confirmation is appropriate. 
+    return false if resource.errors.present? || resource.confirmed_at
+
+    true
+  end
+end
+``` 
 
 ### 10. Background jobs. Sidekiq
 
