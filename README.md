@@ -87,7 +87,6 @@ git commit -am "install recommended gems"
 
 ```
 rails haml:erb2haml
-rm app/views/layouts/application.html.erb # as the above script instructs you to do manually
 rails generate rspec:install
 git add .
 curl -sS https://raw.githubusercontent.com/rubynor/rails-setup/master/.rspec > .rspec
