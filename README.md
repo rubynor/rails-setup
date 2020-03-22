@@ -323,9 +323,9 @@ $ BULLET=true rspec spec
 
 ## PRODUCTION TOOLS
 
- -1 Error catching tool. Honeybadger is suggested, see below
- -1 Logs. Papertrail, see below
- -1 Performance monitoring. Ie. New Relic. See below
+- Error catching tool. Honeybadger is suggested, see below
+- Logs. Papertrail, see below
+- Performance monitoring. Ie. New Relic. See below
 
 
 ### Error Catcher. Honeybadger
